@@ -1,27 +1,19 @@
-# System Architecture Flow
+# Dashboard Architecture
 
-This document provides an overview of the system architecture for the Smart City IoT Street Light Traffic System.
+## Sensor Data Flow
+The dashboard begins with various sensors deployed throughout the smart city. These sensors gather data related to street light conditions, traffic flow, and environmental variables.
 
-## Overview
-The system integrates multiple components to manage street lighting and traffic signals efficiently. It uses IoT technologies to monitor environmental conditions and optimize energy usage.
+## Microcontroller Processing
+All sensor data is sent to a microcontroller (e.g., Arduino or Raspberry Pi), which processes the information. The microcontroller filters, aggregates, and possibly preprocesses the data to reduce noise and send relevant information to manage the smart street lighting and traffic efficiently.
 
-## Components
-1. **Sensors**: Detect light levels, traffic density, and pollution levels.
-2. **IoT Gateways**: Collect data from sensors and send it to the cloud.
-3. **Cloud Server**: Hosts the database and performs data analytics.
-4. **User Interface**: Admin dashboard for managing the system and viewing analytics.
-5. **Traffic Control Module**: Adjusts traffic signals based on real-time data.
+## WiFi Transmission
+Once processed, the microcontroller transmits the data via WiFi to a designated cloud server. This transmission is real-time, ensuring that the dashboard reflects the most current conditions.
 
-## Data Flow
-- Data is collected from various sensors and transmitted to the IoT gateway.
-- The gateway processes the data and sends it to the cloud server.
-- The cloud server analyzes the data and makes decisions which are sent back to the gateway.
-- The backend responds to user commands through the user interface, allowing for management of street lights and traffic systems.
+## Cloud Storage
+The cloud storage solution captures incoming data, organizes it, and ensures it is available for retrieval. This storage can facilitate data analytics and machine learning applications, providing insights into traffic patterns and street light usage.
 
-## Benefits
-- **Energy Efficiency**: Reduces energy consumption by dimming lights when no traffic is detected.
-- **Improved Traffic Management**: Dynamically adjusts traffic signals to optimize flow based on real-time conditions.
-- **Environmental Monitoring**: Collects data on pollution for city-wide analysis.
+## Web Dashboard Visualization
+Finally, a web dashboard visualizes the data in a user-friendly format. The dashboard displays real-time metrics, historical data trends, and analytics that help city officials and users understand the smart city's dynamics.
 
-## Conclusion
-This architecture allows for a smart city approach to urban management, leveraging real-time data for better decision-making.
+---  
+**Note:** This architecture supports scalability to accommodate additional sensors and extended functionalities as needed.
